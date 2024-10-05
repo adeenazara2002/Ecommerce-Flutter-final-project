@@ -1,21 +1,21 @@
-import 'package:ecommerce_flutter_project/Screens/Splash/splash_viewmodel.dart';
+import 'package:ecommerce_flutter_project/Screens/Welcome/welcome_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
-class SplashView extends StackedView<SplashViewModel> {
-  const SplashView({Key? key}) : super(key: key);
+class WelcomeView extends StackedView<WelcomeViewModel> {
+  const WelcomeView({Key? key}) : super(key: key);
 
   @override
   Widget builder(
     BuildContext context,
-    SplashViewModel viewModel,
+    WelcomeViewModel viewModel,
     Widget? child,
   ) {
     return Scaffold(
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        color: Color.fromRGBO(0, 202, 68, 1),
+        color: Colors.pink,
         child: Column(
           children: [
             SizedBox(
@@ -33,14 +33,12 @@ class SplashView extends StackedView<SplashViewModel> {
             Row(
               children: [
                 Padding(padding: EdgeInsets.only(left: 120)),
-                Text(
-                  'DESHI MART',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 20,
-                    color: Color.fromRGBO(255, 255, 255, 1),
-                  ),
-                )
+
+                Text('DESHI MART',style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 20,
+                  color: Color.fromRGBO(255, 255, 255, 1),
+                ),)
               ],
             )
           ],
@@ -50,8 +48,8 @@ class SplashView extends StackedView<SplashViewModel> {
   }
 
   @override
-  SplashViewModel viewModelBuilder(
+  WelcomeViewModel viewModelBuilder(
     BuildContext context,
   ) =>
-      SplashViewModel();
+      WelcomeViewModel();
 }
