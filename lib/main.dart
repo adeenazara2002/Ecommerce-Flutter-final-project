@@ -1,4 +1,4 @@
-import 'package:ecommerce_flutter_project/Screens/splash.dart';
+import 'package:ecommerce_flutter_project/Screens/Splash/splash.dart';
 import 'package:ecommerce_flutter_project/app/app.router.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked_services/stacked_services.dart';

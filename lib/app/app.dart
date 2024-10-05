@@ -1,4 +1,4 @@
-import 'package:ecommerce_flutter_project/Screens/splash.dart'; // Correct import
+import 'package:ecommerce_flutter_project/Screens/Splash/splash.dart'; // Correct import
 import 'package:ecommerce_flutter_project/ui/views/home/home_view.dart';
 import 'package:ecommerce_flutter_project/ui/views/startup/startup_view.dart';
 import 'package:stacked/stacked_annotations.dart';
