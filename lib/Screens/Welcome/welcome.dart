@@ -1,3 +1,4 @@
+import 'package:ecommerce_flutter_project/Screens/SignIn/signIn.dart';
 import 'package:ecommerce_flutter_project/Screens/Welcome/welcome_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
@@ -61,10 +62,8 @@ class WelcomeView extends StackedView<WelcomeViewModel> {
                     'assets/images/bag.png', 'Easy refund and return'),
                 buildDivider(),
                 buildFeatureRow('assets/images/secure.png', 'Secure and safe'),
-                
               ],
             ),
-            
             Positioned(
               bottom: 0,
               left: 0,
@@ -87,7 +86,7 @@ class WelcomeView extends StackedView<WelcomeViewModel> {
                       ),
                     ),
                     const Text(
-                      'Get your grocery in as fast as',
+                      'Get your grocery as fast as in',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,
@@ -106,20 +105,20 @@ class WelcomeView extends StackedView<WelcomeViewModel> {
                     // Get Started Button
                     ElevatedButton(
                       onPressed: () {
-                        // Add navigation or functionality here
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SignInView()),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor:
-                            Colors.white, 
-                        foregroundColor:
-                            const Color.fromRGBO(0, 202, 68, 1), 
+                        backgroundColor: Colors.white,
+                        foregroundColor: const Color.fromRGBO(0, 202, 68, 1),
                         padding: const EdgeInsets.symmetric(
                           horizontal: 90,
                           vertical: 15,
                         ),
                         shape: RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.circular(25),
+                          borderRadius: BorderRadius.circular(25),
                         ),
                       ),
                       child: const Text(

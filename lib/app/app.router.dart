@@ -5,21 +5,25 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:ecommerce_flutter_project/Screens/SignIn/signIn.dart' as _i4;
 import 'package:ecommerce_flutter_project/Screens/Splash/splash.dart' as _i2;
 import 'package:ecommerce_flutter_project/Screens/Welcome/welcome.dart' as _i3;
-import 'package:flutter/material.dart' as _i4;
+import 'package:flutter/material.dart' as _i5;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i5;
+import 'package:stacked_services/stacked_services.dart' as _i6;
 
 class Routes {
   static const splashView = '/splash-view';
 
   static const welcomeView = '/welcome-view';
 
+  static const signInView = '/sign-in-view';
+
   static const all = <String>{
     splashView,
     welcomeView,
+    signInView,
   };
 }
 
@@ -33,18 +37,28 @@ class StackedRouter extends _i1.RouterBase {
       Routes.welcomeView,
       page: _i3.WelcomeView,
     ),
+    _i1.RouteDef(
+      Routes.signInView,
+      page: _i4.SignInView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.SplashView: (data) {
-      return _i4.MaterialPageRoute<dynamic>(
+      return _i5.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.SplashView(),
         settings: data,
       );
     },
     _i3.WelcomeView: (data) {
-      return _i4.MaterialPageRoute<dynamic>(
+      return _i5.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.WelcomeView(),
+        settings: data,
+      );
+    },
+    _i4.SignInView: (data) {
+      return _i5.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i4.SignInView(),
         settings: data,
       );
     },
@@ -57,7 +71,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i5.NavigationService {
+extension NavigatorStateExtension on _i6.NavigationService {
   Future<dynamic> navigateToSplashView([
     int? routerId,
     bool preventDuplicates = true,
@@ -86,6 +100,20 @@ extension NavigatorStateExtension on _i5.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToSignInView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.signInView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithSplashView([
     int? routerId,
     bool preventDuplicates = true,
@@ -108,6 +136,20 @@ extension NavigatorStateExtension on _i5.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.welcomeView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithSignInView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.signInView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
