@@ -12,9 +12,19 @@ class SplashView extends StackedView<SplashViewModel> {
     Widget? child,
   ) {
     return Scaffold(
-      backgroundColor: Colors.red,
       body: Container(
-        padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        color: Color.fromRGBO(0, 202, 68, 1),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Image.asset('assets/images/logo.png')
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
