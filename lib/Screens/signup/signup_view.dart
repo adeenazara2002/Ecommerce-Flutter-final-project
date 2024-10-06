@@ -15,13 +15,28 @@ class SignUpView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset("assets/images/carrot.png"),
-                Text(
-                  "Sign Up",
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                SizedBox(
+                  height: 20,
                 ),
-                Text(
-                  "Enter your credentials to continue",
-                  style: TextStyle(color: Colors.grey),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Sign Up",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          "Enter your credentials to continue",
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
                 TextField(
                   controller: viewModel.usernameController,
@@ -52,6 +67,9 @@ class SignUpView extends StatelessWidget {
                 SizedBox(height: 20),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
+                    shape: ContinuousRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    padding: EdgeInsets.symmetric(horizontal: 100),
                     backgroundColor: Color.fromRGBO(0, 202, 68, 1),
                   ),
                   onPressed: () => viewModel.signUp(context),
@@ -60,11 +78,12 @@ class SignUpView extends StatelessWidget {
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
-                Row(
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text("Already have an account"),
                     Text(
-                      "Sign in",
+                      " Sign in",
                       style: TextStyle(color: Colors.green),
                     )
                   ],
