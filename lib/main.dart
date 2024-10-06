@@ -1,12 +1,15 @@
 import 'package:ecommerce_flutter_project/Screens/Splash/splash.dart';
+import 'package:ecommerce_flutter_project/app/app.locator.dart';
 import 'package:ecommerce_flutter_project/app/app.router.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked_services/stacked_services.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-Future<void> main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  runApp(const MainApp());
+  await Firebase.initializeApp();
+  setupLocator(); // Initialize Stacked services
+  runApp(MainApp());
 }
 
 class MainApp extends StatelessWidget {
