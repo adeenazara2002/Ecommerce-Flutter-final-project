@@ -1,4 +1,5 @@
 import 'package:ecommerce_flutter_project/Screens/Splash/splash.dart';
+import 'package:ecommerce_flutter_project/Screens/profile/profileView.dart';
 import 'package:ecommerce_flutter_project/app/app.locator.dart';
 import 'package:ecommerce_flutter_project/app/app.router.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.signUpView, // Use generated route
+      initialRoute: Routes.profileView, // Use generated route
       onGenerateRoute: StackedRouter().onGenerateRoute, // Use StackedRouter
       navigatorKey: StackedService.navigatorKey,
       navigatorObservers: [
