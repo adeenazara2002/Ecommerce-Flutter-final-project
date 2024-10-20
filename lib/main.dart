@@ -20,7 +20,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.profileView, // Use generated route
+      initialRoute: Routes.bottomNavigationView, // Use generated route
       onGenerateRoute: StackedRouter().onGenerateRoute, // Use StackedRouter
       navigatorKey: StackedService.navigatorKey,
       navigatorObservers: [
